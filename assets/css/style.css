@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Arabic Font */
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400;500;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #01AC67;
+    --bg_color: #FEFEFE;
+    --gray: #ECF0F3;
+    --black: #000510;
+    --white: #fff;
+}
+
+img {
+    max-width: 100%;
+}
+
+.btn {
+    padding: 8px 30px;
+    display: inline-block;
+    background: var(--green);
+    border-radius: 20px;
+    color: var(--white);
+}
+
+.side {
+    width: 80px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 50px;
+    background: var(--white);
+    z-index: 100;
+}
+
+.side .logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.side .logo {
+    width: 50px;
+    height: 50px;
+    background: var(--green);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.side .logo img {
+    width: 100%;
+    max-width: 80%;
+    filter: invert(1);
+}
+
+.side ul li {
+    margin-bottom: 20px;
+}
+
+.side ul li a {
+    color: var(--black);
+    font-size: 20px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 80px;
+    width: calc(100% - 80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: var(--white);
+    z-index: 100;
+}
+
+.container {
+    background: var(--gray);
+    width: calc(100% - 170px);
+    min-height: calc(100vh - 80px);
+    position: relative;
+    top: 80px;
+    left: 130px;
+    padding: 30px;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.container .box {
+    background: var(--white);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.container .box:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.container .box .surahNumber {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container .box .surahNumber .numberBox {
+    padding: 5px 13px;
+    background: #D8FAF0;
+    display: inline-block;
+    border-radius: 50%;
+    color: var(--green);
+}
+
+.container .box .surahNumber i {
+    font-size: 20px;
+    transition: 0.3s all;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.container .box .surahNumber i:hover {
+    color: var(--green);
+}
+
+.container .box .name {
+    font-family: 'Changa', sans-serif;
+    letter-spacing: 0px;
+}
+
+.quran_popup {
+    position: fixed;
+    top: 68px;
+    left: 100px;
+    width: calc(100% - 80px);
+    height: 100vh;
+    background: var(--white);
+    z-index: 2;
+    overflow-y: scroll;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.quran_popup.active {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+}
+
+.quran_popup .close_popup {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+    background: var(--green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 4px;
+    z-index: 1000;
+    color: var(--white);
+}
+
+.quran_popup .ayat p {
+    margin-bottom: 10px;
+    font-family: 'Noto Nastaliq Urdu', serif;
+}
+
+@media (max-width: 991px) {
+    .side {
+        width: 50px;
+        padding: 10px 40px;
+    }
+    .header {
+        width: calc(100% - 80px);
+        left: 80px;
+        padding: 10px 20px;
+    }
+    .container {
+        width: calc(100% - 120px);
+        left: 100px;
+    }
+}
